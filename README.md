@@ -21,6 +21,10 @@
   - Clone o repositório:
     `git clone https://github.com/EmanuelALemos/todo-list-api.git`
     `cd todo-list-api`
+  - Variáveis de Ambiente:
+      - Crie um arquivo .env na raiz do projeto.
+      - Copie o conteúdo de .env.example e ajuste conforme necessário.
+      - Substitua your_password_here pela senha real do seu banco de dados.
   - Instale as dependências do projeto:
     `bundle install`
   - Configure o banco de dados:
