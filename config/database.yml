@@ -21,5 +21,18 @@ test:
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  primary:
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+  cache:
+    <<: *default
+    database: todo_list_production_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *default
+    database: todo_list_production_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *default
+    database: todo_list_production_cable
+    migrations_paths: db/cable_migrate
